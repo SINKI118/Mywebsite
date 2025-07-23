@@ -1,0 +1,94 @@
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>حساب حجم الأسطوانة</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    label, input {
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #00d9ff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00b0cc;
+    }
+
+    #result {
+      margin-top: 25px;
+      font-size: 20px;
+      color: #0f0;
+    }
+
+    a {
+      display: block;
+      margin-top: 40px;
+      color: #00d9ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>حساب حجم الأسطوانة</h1>
+
+  <label>نصف القطر (r):</label><br>
+  <input type="number" id="radius"><br>
+
+  <label>الارتفاع (h):</label><br>
+  <input type="number" id="height"><br>
+
+  <button onclick="calculateVolume()">احسب</button>
+
+  <div id="result"></div>
+
+  <a href="tools.html">⬅ العودة للبرامج الحسابية</a>
+
+  <script>
+    function calculateVolume() {
+      var r = parseFloat(document.getElementById('radius').value);
+      var h = parseFloat(document.getElementById('height').value);
+      if (isNaN(r) || isNaN(h)) {
+        document.getElementById('result').innerHTML = "يرجى إدخال القيم بشكل صحيح.";
+        return;
+      }
+      var volume = Math.PI * r * r * h;
+      document.getElementById('result').innerHTML = "الحجم = " + volume.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

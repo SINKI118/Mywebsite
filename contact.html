@@ -1,0 +1,102 @@
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تواصل معي – محمد يوسف</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      background-color: #2b2b2b;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #00c8ff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #009ec9;
+    }
+
+    a {
+      display: block;
+      margin-top: 30px;
+      color: #00c8ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* زر واتساب */
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #25D366;
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>نموذج التواصل</h1>
+
+  <form onsubmit="sendMessage(); return false;">
+    <input type="text" id="name" placeholder="الاسم" required><br>
+    <input type="email" id="email" placeholder="البريد الإلكتروني" required><br>
+    <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea><br>
+    <button type="submit">إرسال</button>
+  </form>
+
+  <div id="status" style="margin-top: 20px; font-size: 18px; color: lightgreen;"></div>
+
+  <a href="https://wa.me/message/R2DAJ274GJCPP1" target="_blank" class="whatsapp-link">
+    تواصل معي عبر واتساب
+  </a>
+
+  <a href="index.html">⬅ العودة إلى الصفحة الرئيسية</a>
+
+  <script>
+    function sendMessage() {
+      document.getElementById('status').innerText = "✅ تم إرسال رسالتك بنجاح (وهمياً)";
+      document.getElementById('name').value = "";
+      document.getElementById('email').value = "";
+      document.getElementById('message').value = "";
+    }
+  </script>
+
+</body>
+</html>

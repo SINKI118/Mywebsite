@@ -1,0 +1,90 @@
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>حساب مساحة الدائرة</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    label, input {
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    input {
+      padding: 8px;
+      border-radius: 6px;
+      border: none;
+      width: 200px;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #00ff99;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00cc77;
+    }
+
+    #result {
+      margin-top: 25px;
+      font-size: 20px;
+      color: #0f0;
+    }
+
+    a {
+      display: block;
+      margin-top: 40px;
+      color: #00ff99;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>حساب مساحة الدائرة</h1>
+
+  <label>نصف القطر (r):</label><br>
+  <input type="number" id="radius"><br>
+
+  <button onclick="calculateArea()">احسب</button>
+
+  <div id="result"></div>
+
+  <a href="tools.html">⬅ العودة للبرامج الحسابية</a>
+
+  <script>
+    function calculateArea() {
+      var r = parseFloat(document.getElementById('radius').value);
+      if (isNaN(r)) {
+        document.getElementById('result').innerHTML = "يرجى إدخال نصف القطر بشكل صحيح.";
+        return;
+      }
+      var area = Math.PI * r * r;
+      document.getElementById('result').innerHTML = "المساحة = " + area.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
